@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>letter</title>
+    <link rel="stylesheet" href="../css/letter.css" type="text/css">
+</head>
+
+<body>
+    <div class="back">
+        <strong>
+            <i><a href="../Leona Jiang.html">← &nbsp; BACK &nbsp; ← </a></i>
+        </strong>
+    </div>
+    <div id="header">
+    </div>
+    <div id="main">
+    </div>
+    <div class="next">
+        <strong>
+            <i><a href="./TypefaceDesign.html">→ &nbsp; NEXT &nbsp; →</a></i>
+        </strong>
+    </div>
+</body>
+<script>
+    var data = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    var headerData = ["L", "E", "O", "N", "A"];
+
+    var images = new Array();
+    var headerLImages = new Array();
+    var headerEImages = new Array();
+    var headerOImages = new Array();
+    var headerNImages = new Array();
+    var headerAImages = new Array();
+    function preload(arr) {
+        for (i = 0; i < arr.length; i++) {
+            images[i] = new Image()
+            images[i].src = "../image/" + arr[i] + ".png";
+        }
+    }
+    function preloadHeader(arr) {
+        for (i = 0; i < arr.length; i++) {
+            switch (i) {
+                case 0:
+                    for (j = 0; j < 3; j++) {
+                        headerLImages[j] = new Image();
+                        headerLImages[j].src = "../image/letteer/L/" + (j + 1) + ".png";
+                    }
+                    break;
+                case 1:
+                    for (j = 0; j < 5; j++) {
+                        headerEImages[j] = new Image();
+                        headerEImages[j].src = "../image/letteer/E/" + (j + 1) + ".png";
+                    }
+                    break;
+                case 2:
+                    for (j = 0; j < 3; j++) {
+                        headerOImages[j] = new Image();
+                        headerOImages[j].src = "../image/letteer/O/" + (j + 1) + ".png";
+                    }
+                    break;
+                case 3:
+                    for (j = 0; j < 3; j++) {
+                        headerNImages[j] = new Image();
+                        headerNImages[j].src = "../image/letteer/N/" + (j + 1) + ".png";
+                    }
+                    break;
+                case 4:
+                    for (j = 0; j < 3; j++) {
+                        headerAImages[j] = new Image();
+                        headerAImages[j].src = "../image/letteer/A/" + (j + 1) + ".png";
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+        }
+    }
+    preloadHeader(headerData);
+    preload(data);
+
+    var content = document.getElementById("main");
+    var title = document.getElementById("header");
+
+    var listStr = "";
+    data.forEach((item) => {
+        listStr += `
+                    <div class="item">
+                        <img src="../image/${item}.png" alt="">
+                    </div>`;
+    });
+    content.innerHTML = listStr;
+
+    let headerStr = "";
+    headerData.forEach((item) => {
+        switch (item) {
+            case "A":
+                headerStr += `
+                    <div class="letter a-box">
+                        <img src="../image/letteer/A/1.png" alt="" class="left">
+                        <img src="../image/letteer/A/2.png" alt="" class="right">
+                        <img src="../image/letteer/A/3.png" alt="" class="top">
+                    </div>`;
+                break;
+            case "E":
+                headerStr += `
+                    <div class="letter e-box">
+                        <img src="../image/letteer/E/1.png" alt="" class="top">
+                        <img src="../image/letteer/E/2.png" alt="" class="left">
+                        <img src="../image/letteer/E/3.png" alt="" class="right">
+                        <img src="../image/letteer/E/4.png" alt="" class="center">
+                        <img src="../image/letteer/E/5.png" alt="" class="right">
+                    </div>`;
+                break;
+            case "L":
+                headerStr += `
+                    <div class="letter l-box">
+                        <img src="../image/letteer/L/1.png" alt="" class="top">
+                        <img src="../image/letteer/L/2.png" alt="" class="right">
+                        <img src="../image/letteer/L/3.png" alt="" class="left">
+                    </div>`;
+                break;
+            case "N":
+                headerStr += `
+                    <div class="letter l-box">
+                        <img src="../image/letteer/N/1.png" alt="" class="center">
+                        <img src="../image/letteer/N/2.png" alt="" class="left">
+                        <img src="../image/letteer/N/3.png" alt="" class="right">
+                    </div>`;
+                break;
+            case "O":
+                headerStr += `
+                    <div class="letter l-box">
+                        <img src="../image/letteer/O/1.png" alt="" class="left">
+                        <img src="../image/letteer/O/2.png" alt="" class="top">
+                        <img src="../image/letteer/O/3.png" alt="" class="right">
+                    </div>`;
+                break;
+            default:
+                break;
+        }
+    })
+    title.innerHTML = headerStr;
+</script>
+
+</html>

@@ -1,0 +1,25 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  font-size: 14px;
+  color: rgb(200, 43, 214);
+  display: inline-block;
+  margin-left: 20px;
+}
+.title{
+  position: fixed;
+  top: 1%;
+  right: 12%;
+  width: 30px;
+  height: 100%;
+  font-size: 3rem;
+  color: rgb(200, 43, 214);
+  word-wrap:break-word;
+}

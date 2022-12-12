@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypefaceDesign</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 150%;
+            border: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/StepTwo.css" type="text/css">
+</head>
+
+<body>
+    <div class="back">
+        <strong>
+            <i><a href="./letter.html">← &nbsp; BACK &nbsp; ← </a></i>
+        </strong>
+    </div>
+    <div class="first-step">
+        <div class="left">
+            <div class="first">
+                <h1>Step1</h1>
+                Since there are many differences between web and print out fonts, for example, on the web fonts are
+                diverse, changeable, and easy to change, and the medium of both is different, web fonts will be more in
+                today's digital environment, is a newer form, and has better readability.
+            </div>
+            <div class="second">
+                In the first group, I hope there will be some playability, so I may use capitalization to highlight the
+                main characters in this group.
+            </div>
+            <div class="third">
+                <img src="../image/3.jpg" alt="" />
+            </div>
+            <div class="fourth">
+                When the mouse touches the swirls in the middle of some letters, those swirls will turn with it.
+            </div>
+        </div>
+        <div class="middle">
+            <div>
+                <img src="../image/4.jpg" alt="">
+            </div>
+            <div>
+                <img src="../image/1.jpg" alt="">
+            </div>
+            <div>
+                <img src="../image/5.jpg" alt="">
+            </div>
+            <div>
+                <img src="../image/2.jpg" alt="">
+            </div>
+        </div>
+        <div class="right">
+            <div class="first">
+                The second group will be mapped out like a mirror, with different colors changing from moment to moment.
+            </div>
+            <div class="second">
+                The third group, is also a change of color, but unlike the second group, it will be a change of wave
+                shape.
+            </div>
+            <div class="third">
+                The fourth group looks like a glowing effect, but when the mouse touches the font, there will be a
+                balloon-like bursting effect.
+            </div>
+            <div class="fourth">
+                The fifth group will have the same feeling of water ripples when touched, so I chose the same material
+                as ink painting and the font.
+            </div>
+        </div>
+    </div>
+    <div class="second-step">
+        <div class="left">
+            <div class="first">
+                <h1>Step2</h1>
+                I ended up choosing the fourth group as my final draft and created all the characters, but I'm still
+                thinking about how to make them work, whether as simple color and shape changes or to make them like
+                fondant
+                for some 3D rendering.
+            </div>
+            <div class="second">
+                <img src="../image/7.jpg" alt="" />
+            </div>
+        </div>
+        <div class="right" id="change-img">
+        </div>
+    </div>
+    <script>
+        var IMG_LISTS = [];
+        var FEL = document.getElementById('change-img');
+
+        for (let i = 0; i <= 9; i++) {
+            let _el = new Image();
+            _el.alt = "";
+            if (i < 9) {
+                _el.src = `../image/1${i + 1}.jpg`;
+                _el.style.display = 'none';
+            } else {
+                _el.src = `../image/6.jpg`;
+                _el.style.display = 'block';
+            }
+            FEL.appendChild(_el);
+            IMG_LISTS.push(_el);
+        }
+
+        function random(lower, upper) {
+            lower = +lower || 0;
+            upper = +upper || 0;
+            return Math.random() * (upper - lower) + lower;
+        }
+
+        window.onload = function () {
+            var action_element = document.getElementById('change-img');
+            let flag = true;
+            let timer = null;
+
+            action_element.onmousemove = function () {
+                if (flag) {
+                    flag = false;
+                    if (timer) clearTimeout(timer);
+                    timer = null;
+                    var ramdom_num = parseInt(random(0, 9));
+                    for (let i = 0; i < IMG_LISTS.length; i++) {
+                        IMG_LISTS[i].style.display = 'none';
+                    }
+                    IMG_LISTS[ramdom_num].style.display = 'block';
+                    timer = setTimeout(() => {
+                        flag = true;
+                    }, 200);
+                }
+            }
+
+            action_element.onmouseleave = function () {
+                for (let i = 0; i < IMG_LISTS.length; i++) {
+                    IMG_LISTS[i].style.display = 'none';
+                }
+                IMG_LISTS[9].style.display = 'block';
+                if (timer) clearTimeout(timer);
+                timer = null;
+                flag = true;
+            }
+        }
+    </script>
+</body>
+
+</html>

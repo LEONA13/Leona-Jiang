@@ -1,0 +1,125 @@
+.first-step {
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+
+.first-step .left {
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.first-step .left div {
+    height: 25%;
+    padding: 1% 1% 0 4%;
+}
+
+.first-step .left .second {
+    height: 12%;
+}
+
+.first-step .left .third {
+    padding: 1%;
+}
+
+.first-step .left .third img {
+    width: 100%;
+    height: 100%;
+}
+
+.first-step .left .fourth {
+    height: 38%;
+    padding-top: 30%;
+}
+
+.first-step .middle {
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    left: 30%;
+    top: 0;
+}
+
+.first-step .middle div {
+    height: 25%;
+}
+
+.first-step .middle div img {
+    width: 100%;
+    height: 100%;
+}
+
+.first-step .right {
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    left: 70%;
+    top: 0;
+}
+
+.first-step .right div {
+    height: 25%;
+    padding: 1% 1% 0 4%;
+}
+
+.first-step .right .first {
+    padding-top: 8%;
+}
+
+.second-step {
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+
+.second-step .left {
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.second-step .left div {
+    padding: 1% 1% 0 4%;
+}
+
+.second-step .left .first {
+    height: 18%;
+}
+
+.second-step .left .second {
+    height: 82%;
+    padding: 1%;
+}
+
+.second-step .left .second img {
+    width: 100%;
+}
+
+.second-step .right {
+    width: 50%;
+    height: 90%;
+    position: absolute;
+    right: 2%;
+    top: 2%;
+}
+
+.second-step .right img{
+    width:100%;
+}
+
+.back {
+    height: 60px;
+    padding-left: 1%;
+    line-height: 60px;
+    text-align: left;
+}
+
+.back a {
+    font-size: 20px;
+    color: #a7394c;
+}
