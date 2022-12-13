@@ -1,0 +1,14 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+a {
+  text-decoration: none;
+  font-size: 14px;
+  color: rgb(200, 43, 214);
+  display: inline-block;
+  margin-left: 20px;
+}
